@@ -2,6 +2,7 @@ import About from '../../modules/about/routes';
 import Auth from '../../modules/auth/routes';
 import Home from '../../modules/home/routes';
 
+
 export default [
     {
         path: '/',
@@ -14,3 +15,4 @@ export default [
     ...About,
     ...Home
 ]
+
