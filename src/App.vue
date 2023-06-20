@@ -8,12 +8,14 @@ import { useRoute } from 'vue-router'
 import loginLayout from './shared/layouts/loginLayout.vue';
 import adminLayout from './shared/layouts/adminLayout.vue';
 import mainLayout from './shared/layouts/mainLayout.vue';
+import chatsLayout from './shared/layouts/chatsLayout.vue';
 
 
 const layouts = {
   'login': loginLayout,
   'about': adminLayout,
-  'main': mainLayout
+  'main': mainLayout,
+  'chats': chatsLayout
 }
 
 const route = useRoute()

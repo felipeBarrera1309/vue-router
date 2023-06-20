@@ -2,6 +2,7 @@
     <section>
         <router-link :to="{ name: 'admin' }">Home</router-link>
         <router-link :to="{ name: 'about' }">about</router-link>
+        <router-link :to="{ name: 'chats' }">Chats</router-link>
     </section>
 </template>
 
@@ -14,7 +15,7 @@
 section{
     display: flex;
     justify-content: center;
-    margin-top: 40px;
+    padding-top: 40px;
     min-height: 60px;
     align-items: center;
     gap: 40px;

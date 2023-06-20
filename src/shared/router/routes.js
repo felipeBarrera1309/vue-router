@@ -1,6 +1,7 @@
 import About from '../../modules/about/routes';
 import Auth from '../../modules/auth/routes';
 import Home from '../../modules/home/routes';
+import Chats from '../../modules/chats/routes';
 
 
 export default [
@@ -13,6 +14,7 @@ export default [
     },
     ...Auth,
     ...About,
-    ...Home
+    ...Home,
+    ...Chats
 ]
 
