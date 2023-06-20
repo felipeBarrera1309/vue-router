@@ -9,8 +9,10 @@ export default [
                 path: ':id',
                 name: 'chats.messages.wap.details',
                 component: () => import('../pages/messages.vue'),
-                props: {
-                    id: '5'
+                props: (route) => {
+                    return {
+                        id: route.params.id
+                    }
                 }
             }
         ]
