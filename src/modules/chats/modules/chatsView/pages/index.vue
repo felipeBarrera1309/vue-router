@@ -10,15 +10,34 @@
 </template>
 
 <script>
+import { watchEffect, ref, onBeforeMount } from 'vue';
+import { useRoute } from 'vue-router';
 
 export default {
-    data: () => ({
-        chats: [
-            { id: 1, name: 'Felipe', numero: 5 },
-            { id: 2, name: 'Sofia', numero: 7 },
-            { id: 3, name: 'Paula', numero: 10 },
-        ]
-    })
+    setup(){
+
+        const route = useRoute()
+
+        const chats = ref([])
+        onBeforeMount(() => {
+            watchEffect(() => {
+                setTimeout(() => {
+                    chats.value = [
+                        { id: 1, name: 'Felipe', numero: 5 },
+                        { id: 2, name: 'Sofia', numero: 7 },
+                        { id: 3, name: 'Paula', numero: 10 },
+                    ]
+                }, 500)
+                console.log('Esta es la ruta en la que estamos y esta cambiando: ', route.params);
+            })
+        })
+
+
+
+        return {
+            chats
+        }
+    }
 }
 
 </script>

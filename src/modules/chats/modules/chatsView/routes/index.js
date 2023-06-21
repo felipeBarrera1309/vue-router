@@ -6,7 +6,7 @@ export default [
         component: () => import ('../pages/index.vue'),
         children: [
             {
-                path: ':id',
+                path: ':id(\\d+)',
                 name: 'chats.messages.wap.details',
                 component: () => import('../pages/messages.vue'),
                 props: (route) => {

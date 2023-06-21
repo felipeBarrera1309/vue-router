@@ -6,6 +6,19 @@ import Chats from '../../modules/chats/routes';
 
 export default [
     {
+        path: '/404',
+        name: 'not.found',
+        component: () => import('../../modules/auth/pages/404View.vue'),
+        meta: {
+            layout: 'notFound',
+            name: 'not found'
+        }
+    },
+    {
+        path: '/:catchAll(.*)',
+        redirect: { name: 'not.found' }
+    },
+    {
         path: '/',
         name: 'Home',
         meta: { name: 'Home' },
