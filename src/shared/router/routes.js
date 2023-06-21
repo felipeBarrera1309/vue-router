@@ -7,7 +7,7 @@ import Chats from '../../modules/chats/routes';
 export default [
     {
         path: '/',
-        name: 'home',
+        name: 'Home',
         meta: { name: 'Home' },
         redirect: { name: 'login' },
         component: () => import('../pages/home.vue')

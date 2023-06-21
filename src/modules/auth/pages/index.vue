@@ -17,15 +17,27 @@
 <script setup>
 import { ref } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
+import { storeToRefs } from 'pinia';
 import { Form, Field } from 'vee-validate';
+import { useAuth } from '../store/auth.store.js';
 
 const router = useRouter()
 const route = useRoute()
 const username = ref('')
 const password = ref('')
 
+
+const { login } = useAuth();
+const { getToken } = storeToRefs(useAuth());
+
 function toGoMain(){
-    router.push({ name: 'about' })
+    const payload = {
+        username: username.value,
+        password: password.value,
+        tipo: 21
+    }
+    login(payload)
+    router.push({ name: 'admin' })
 }
 
 </script>
