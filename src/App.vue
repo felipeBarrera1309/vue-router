@@ -10,6 +10,7 @@ import adminLayout from './shared/layouts/adminLayout.vue';
 import mainLayout from './shared/layouts/mainLayout.vue';
 import chatsLayout from './shared/layouts/chatsLayout.vue';
 import notFoundLayout from './shared/layouts/notFoundLayout.vue';
+import profileLayout from './shared/layouts/profileLayout.vue';
 
 
 const layouts = {
@@ -17,7 +18,8 @@ const layouts = {
   'about': adminLayout,
   'main': mainLayout,
   'chats': chatsLayout,
-  'notFound': notFoundLayout
+  'notFound': notFoundLayout,
+  'profile': profileLayout
 }
 
 const route = useRoute()

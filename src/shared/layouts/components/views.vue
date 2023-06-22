@@ -3,12 +3,15 @@
         <router-link :to="{ name: 'admin' }">Home</router-link>
         <router-link :to="{ name: 'about' }">about</router-link>
         <router-link :to="{ name: 'chats' }">Chats</router-link>
+        <router-link v-if="router.hasRoute('profile')" :to="{ name: 'profile' }">Profile</router-link>
     </section>
 </template>
 
 <script setup>
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 
-
+const router = useRouter()
 </script>
 
 <style lang="scss" scoped>

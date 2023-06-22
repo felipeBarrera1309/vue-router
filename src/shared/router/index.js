@@ -2,10 +2,23 @@ import { createRouter, createWebHistory } from 'vue-router';
 import routes from './routes.js';
 import { useAuth } from '../../modules/auth/store/auth.store.js';
 
+const stage = import.meta.env.VITE_STAGE
+
 const router = createRouter({
     history: createWebHistory(),
     routes
 })
+
+if(stage === 'test'){
+    router.addRoute({
+        path: '/profile',
+        name: 'profile',
+        meta: {
+            layout: 'profile'
+        },
+        component: () => import('../../modules/profile/pages/index.vue')
+    })
+}
 
 router.beforeEach((to, from) => {
 
@@ -22,11 +35,11 @@ router.beforeEach((to, from) => {
             return true
         }
 
-        if(!getToken){
-            return { name: 'login' }
-        }
+        // if(!getToken){
+        //     return { name: 'login' }
+        // }
 
-        if(isAuthenticated.value.tipo === 21) return true;
+        // if(isAuthenticated.value.tipo === 21) return true;
 
         return true
     }
