@@ -7,12 +7,12 @@ const router = createRouter({
     routes
 })
 
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, from) => {
 
-    if(to.name === 'login' && from.name) return next({ name: 'admin' });
-    else next()
     const isAuth = ['login']
-    if(isAuth.includes(to.name)) return true
+    if(isAuth.includes(to.name) && !from.name) {
+        return true
+    }
 
 
     if(to.name !== 'login'){

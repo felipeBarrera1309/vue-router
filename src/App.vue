@@ -9,13 +9,15 @@ import loginLayout from './shared/layouts/loginLayout.vue';
 import adminLayout from './shared/layouts/adminLayout.vue';
 import mainLayout from './shared/layouts/mainLayout.vue';
 import chatsLayout from './shared/layouts/chatsLayout.vue';
+import notFoundLayout from './shared/layouts/notFoundLayout.vue';
 
 
 const layouts = {
   'login': loginLayout,
   'about': adminLayout,
   'main': mainLayout,
-  'chats': chatsLayout
+  'chats': chatsLayout,
+  'notFound': notFoundLayout
 }
 
 const route = useRoute()
