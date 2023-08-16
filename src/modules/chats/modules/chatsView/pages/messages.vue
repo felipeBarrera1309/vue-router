@@ -33,5 +33,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+section{
+    &:has(.router-link){
+        &:nth-child(2){
+            color: red;
+        }
+    }
+}
 
 </style>

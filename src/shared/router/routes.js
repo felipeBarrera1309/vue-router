@@ -21,7 +21,7 @@ export default [
     {
         path: '/',
         name: 'Home',
-        meta: { name: 'Home' },
+        meta: { name: 'Home', title: 'home' },
         redirect: { name: 'login' },
         component: () => import('../pages/home.vue')
     },

@@ -3,7 +3,7 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
+import { computed, watch } from 'vue';
 import { useRoute } from 'vue-router'
 import loginLayout from './shared/layouts/loginLayout.vue';
 import adminLayout from './shared/layouts/adminLayout.vue';
@@ -29,6 +29,20 @@ const layout = computed(() => {
   else if(route?.name) return layouts.about
   else return null
 })
+
+watch(() => route,
+  (newValue) => {
+    console.log('Estas son las rutas a donde estoy navegando: ', newValue);
+    if(route?.meta?.title){
+      document.title = `vue router ${route.meta.title}`
+    }else{
+      document.title = 'vue router'
+    }
+  }, {
+    immediate: true,
+    deep: true
+  }
+)
 
 
 </script>

@@ -4,6 +4,7 @@ export default [
         name: 'admin',
         meta: {
             layout: 'main',
+            title: 'main',
             // requireAuth: true,
             // roles: ['admin']
         },
