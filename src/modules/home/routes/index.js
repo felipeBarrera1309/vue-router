@@ -1,3 +1,5 @@
+import { defineAsyncComponent } from 'vue'
+
 export default [
     {
         path: '/admin',
@@ -8,6 +10,6 @@ export default [
             // requireAuth: true,
             // roles: ['admin']
         },
-        component: () => import('../pages/index.vue')
+        component: defineAsyncComponent(() => import('../pages/index.vue'))
     }
 ]

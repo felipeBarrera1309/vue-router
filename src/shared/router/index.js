@@ -21,6 +21,8 @@ if(stage === 'test'){
 }
 
 router.beforeEach((to, from) => {
+    console.log('Voy a: ', to);
+    console.log('Vengo de: ', from);
 
     const isAuth = ['login']
     if(isAuth.includes(to.name) && !from.name) {

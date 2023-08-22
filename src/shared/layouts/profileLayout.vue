@@ -6,7 +6,7 @@
 </template>
 
 <script setup>
-import views from '../layouts/components/views.vue';
+import views from '../components/views.vue';
 
 </script>
 

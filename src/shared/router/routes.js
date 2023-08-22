@@ -1,3 +1,4 @@
+import { defineAsyncComponent } from 'vue';
 import About from '../../modules/about/routes';
 import Auth from '../../modules/auth/routes';
 import Home from '../../modules/home/routes';
@@ -8,7 +9,7 @@ export default [
     {
         path: '/404',
         name: 'not.found',
-        component: () => import('../../modules/auth/pages/404View.vue'),
+        component: defineAsyncComponent(() => import('../../modules/auth/pages/404View.vue')),
         meta: {
             layout: 'notFound',
             name: 'not found'
@@ -23,7 +24,7 @@ export default [
         name: 'Home',
         meta: { name: 'Home', title: 'home' },
         redirect: { name: 'login' },
-        component: () => import('../pages/home.vue')
+        component: defineAsyncComponent(() => import('../pages/home.vue'))
     },
     ...Auth,
     ...About,

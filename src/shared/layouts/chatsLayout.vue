@@ -14,7 +14,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import views from './components/views.vue';
+import views from '../components/views.vue';
 
 const menus = ref([
     {

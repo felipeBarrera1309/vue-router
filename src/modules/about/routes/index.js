@@ -1,3 +1,5 @@
+import { defineAsyncComponent } from 'vue'
+
 export default [
     {
         path: '/about',
@@ -6,6 +8,6 @@ export default [
             layout: 'about',
             title: 'acerca de ti'
         },
-        component: () => import('../pages/index.vue')
+        component: defineAsyncComponent(() => import('../pages/index.vue'))
     }
 ]
